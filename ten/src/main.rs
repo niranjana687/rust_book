@@ -51,6 +51,11 @@ struct Point<T, U> {
     y: U,
 
 }
+impl<T,U> Point<T, U> {
+    fn x(&self) -> &T {
+        &self.x
+    }
+}
 //enum
 enum Result<T, E> {
     Ok(T),
@@ -62,15 +67,30 @@ enum Option<T> {
     None,
 }
 
-impl<T> Point<T> {
-    fn &self)
-}
 
+struct Mapping<T> {
+    x_c : T,
+    y_c : T,
+}
+impl Mapping<f32> {
+    fn distance_from_origin(&self) -> f32{
+        (self.x_c.powi(2) + self.y_c.powi(2)).sqrt()
+
+    }
+}
 fn main() {
     let p1 = Point {
         x: 5,
         y: String::from("hello"),
     };
+
+    println!("p1.x = {}", p1.x() );
+    let m = Mapping{
+        x_c: 55.66,
+        y_c: 44.88,
+    };
+    let distance = m.distance_from_origin();
+    println!("{}", distance);
 
         
     
