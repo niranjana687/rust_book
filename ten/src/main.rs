@@ -1,4 +1,5 @@
 #![allow(unused_variables)]
+#[derive(Debug)]
 /*
 use std::cmp::PartialOrd;
 
@@ -55,6 +56,12 @@ impl<T,U> Point<T, U> {
     fn x(&self) -> &T {
         &self.x
     }
+    fn mixup<P, Q>(self, other: Point<P, Q>) -> Point<T, Q>{
+       Point {
+        x: self.x,
+        y: other.y,
+       }
+    }
 }
 //enum
 enum Result<T, E> {
@@ -83,6 +90,10 @@ fn main() {
         x: 5,
         y: String::from("hello"),
     };
+    let p2 = Point{
+        x: 55,
+        y: 565656,
+    };
 
     println!("p1.x = {}", p1.x() );
     let m = Mapping{
@@ -91,6 +102,8 @@ fn main() {
     };
     let distance = m.distance_from_origin();
     println!("{}", distance);
+    let p3 = p1.mixup(p2);
+    println!("{:?}", p3);
 
         
     
