@@ -105,6 +105,8 @@ fn main() {
     let p3 = p1.mixup(p2);
     println!("{:?}", p3);
 
-        
+    let integer = Some(5);
+    let float = Some(5657.577);
+    
     
 }
