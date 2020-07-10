@@ -1,0 +1,77 @@
+#![allow(unused_variables)]
+/*
+use std::cmp::PartialOrd;
+
+//function
+fn largest<T>(list :&[T]) -> T{
+    let mut largest = list[0];
+
+    for &item in list {
+        if item > largest {
+            largest = item ;
+
+        }
+    }
+    largest 
+
+}
+
+/*fn largest_char(list :&[char]) -> char {
+    let mut largest = list[0];
+    for &item in list {
+        if item > largest {
+            largest = item;
+        }
+    } largest
+}*/
+
+fn main() {
+   let v1 = vec![33,44,6,74,556,78];
+   let v2 = vec!['a','b','c'];
+
+   /*let mut largest = v[0];
+
+   for num in v {
+       if num> largest {
+           largest = num;
+
+       }
+   }
+   println!("The largest number is :{}", largest);*/
+
+   let fn_large = largest_i32(&v1);
+   println!("The largest number is :{}", fn_large);
+   let fn_char = largest_char(&v2);
+   println!("The largest char is :{}", fn_char);
+
+}*/
+//struct
+struct Point<T, U> {
+    x: T,
+    y: U,
+
+}
+//enum
+enum Result<T, E> {
+    Ok(T),
+    Err(E),
+}
+
+enum Option<T> {
+    Some(T),
+    None,
+}
+
+impl<T> Point<T> {
+    fn &self)
+}
+
+fn main() {
+    let p1 = Point {
+        x: 5,
+        y: String::from("hello"),
+    };
+
+        
+    
+}
