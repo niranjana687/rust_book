@@ -18,7 +18,14 @@ pub trait Summary {
 
     
 }
-
+pub trait Display {
+    fn display_it(&self) -> String;
+}
+impl Display for Tweet {
+    fn display_it(&self) -> String {
+        format!("{} ", self.content)
+    }
+}
 
 
 pub struct Tweet {
@@ -42,8 +49,14 @@ impl Summary for Tweet {
     //     format!("{}", self.summarize_author())
     // }
 }
-pub fn notify<T: Summary>(item: &T) {
-    println!("Latest Tweet!  {}", item.summarize() );
+// pub fn notify<T: Summary>(item: &T) {
+//     println!("Latest Tweet!  {}", item.summarize() );
+// }
+// pub fn notify(item: &(impl Summary + Display)) {
+
+// }
+pub fn notify<T: Summary + Display> (item: &T) {
+
 }
 
 // pub struct NewsArticle {
