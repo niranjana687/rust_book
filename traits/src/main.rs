@@ -1,4 +1,4 @@
-use traits::{self, Tweet, Summary, NewsArticle};
+use traits::{self, Tweet, Summary};
 
 fn main() {
 
@@ -10,14 +10,14 @@ fn main() {
     };
     println!("New tweet: {}", tweet.summarize());
 
-    let article = NewsArticle {
-        headline: String::from("Corona Eliminated!"),
-        author: String::from("Niranjana"),
-        location: String::from("Kochi"),
-        content: String::from("The deadly corona virus has been elimated and niranjana is finally able to go to kochi!!!"),
+    // let article = NewsArticle {
+    //     headline: String::from("Corona Eliminated!"),
+    //     author: String::from("Niranjana"),
+    //     location: String::from("Kochi"),
+    //     content: String::from("The deadly corona virus has been elimated and niranjana is finally able to go to kochi!!!"),
         
-    };
-    println!("New article - {}", article.summarize());
+    // };
+    // println!("New article - {}", article.summarize());
     
 
 
