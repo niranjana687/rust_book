@@ -63,9 +63,17 @@ fn some_function<T , U>(t :&T, u :&U) -> i32
             where T: Display + Clone,
                   U: Clone + Debug
     {
-        
-    } 
 
+    } 
+fn returns_summarizable() -> impl Summary {
+    Tweet{
+        username: String::from("Niranjana"),
+        content: String::from("Hello hi i feel so happy"),
+        reply: false,
+        retweet: false,
+
+    }
+}
 
 // pub struct NewsArticle {
 //     pub headline: String,
