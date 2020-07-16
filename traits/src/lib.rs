@@ -59,6 +59,14 @@ pub fn notify<T: Summary + Display> (item: &T) {
 
 }
 
+fn some_function<T , U>(t :&T, u :&U) -> i32
+            where T: Display + Clone,
+                  U: Clone + Debug
+    {
+        
+    } 
+
+
 // pub struct NewsArticle {
 //     pub headline: String,
 //     pub author: String,
