@@ -38,6 +38,6 @@ fn largest<T >(list: &[T]) -> T
     }largest
 }
 
-impl<T: Display> ToString for T {
-    // --snip--
-}
+// impl<T: Display> ToString for T {
+//     // --snip--
+// }
