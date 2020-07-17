@@ -1,4 +1,5 @@
 use traits::{self, Tweet, Summary};
+use std::fmt::Display;
 
 fn main() {
 
@@ -22,6 +23,7 @@ fn main() {
     let list = vec![34,45,55,3,44,5,66,7];
     let ans = largest(&list);
     println!("{}", ans);
+    let s = 3.to_string();
 
 
 }
@@ -34,4 +36,8 @@ fn largest<T >(list: &[T]) -> T
             largest = item;
         }
     }largest
+}
+
+impl<T: Display> ToString for T {
+    // --snip--
 }
