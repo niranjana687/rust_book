@@ -19,7 +19,19 @@ fn main() {
     // };
     // println!("New article - {}", article.summarize());
     
+    let list = vec![34,45,55,3,44,5,66,7];
+    let ans = largest(&list);
+    println!("{}", ans);
 
 
-
+}
+fn largest<T >(list: &[T]) -> T 
+    where T: Copy + PartialOrd
+{
+    let mut largest = list[0];
+    for &item in list {
+        if item > largest{
+            largest = item;
+        }
+    }largest
 }
