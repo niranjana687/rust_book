@@ -7,7 +7,7 @@ fn main() {
     println!("{}", r);
 
     let s1 = String::from("abcde");
-    let s2 = "xyz";
+    let s2 :&'static str = "xyz";
 
     let result = longest(s1.as_str(), s2);
     println!("{}", result);
