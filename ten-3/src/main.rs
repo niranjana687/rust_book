@@ -21,6 +21,10 @@ fn main() {
     };
     println!("{}", i.part);
     let word = first_word(first_sen);
+    println!("{}", word);
+
+    let rand = i.level();
+    println!("{}", rand);
 
 
 }
@@ -37,6 +41,12 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 #[derive(Debug)]
 struct ImportantExcerpt<'a> {
     part: &'a str,
+}
+
+impl<'a> ImportantExcerpt<'a> {
+    fn level(&self) -> i32 {
+        3
+    }
 }
 
 fn first_word(s :&str) -> &str {
