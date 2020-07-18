@@ -11,6 +11,17 @@ fn main() {
 
     let result = longest(s1.as_str(), s2);
     println!("{}", result);
+
+
+    let string = String::from("I am so happy. I want to fly");
+    let first_sen = string.split('.').next().expect("Could not find a '.'");
+    let i = ImportantExcerpt  {
+        part : first_sen,
+
+    };
+    println!("{}", i.part);
+
+
 }
 
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
@@ -20,4 +31,9 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     else {
         y
     }
+}
+
+#[derive(Debug)]
+struct ImportantExcerpt<'a> {
+    part: &'a str,
 }
