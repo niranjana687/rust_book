@@ -1,3 +1,4 @@
+use std::fmt::Display;
 fn main() {
     let r;
     
@@ -25,6 +26,16 @@ fn main() {
 
     let rand = i.level();
     println!("{}", rand);
+
+    let str1 = "hello hii byeee";
+    let str2 = "fin bin";
+    let finale = longest_final(
+        str1,
+        str2,
+         "18/7/20"
+        );
+    println!("{}", finale);
+
 
 
 }
@@ -60,4 +71,20 @@ fn first_word(s :&str) -> &str {
 
     }
     &s[..]
+}
+
+fn longest_final<'a, T>(
+    x: &'a str,
+    y: &'a str, 
+    ann: T
+) -> &'a str 
+    where T: Display,
+{
+    println!("The summary is : Chater 10 done!");
+    if x.len()> y.len() {
+        return x;
+    }
+    else {
+        y
+    }
 }
