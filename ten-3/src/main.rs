@@ -20,6 +20,7 @@ fn main() {
 
     };
     println!("{}", i.part);
+    let word = first_word(first_sen);
 
 
 }
@@ -36,4 +37,17 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 #[derive(Debug)]
 struct ImportantExcerpt<'a> {
     part: &'a str,
+}
+
+fn first_word(s :&str) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+
+
+    }
+    &s[..]
 }
