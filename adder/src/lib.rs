@@ -2,6 +2,12 @@
 mod tests {
     use super::*;
     #[test]
+    fn greetings_contain_name() {
+        let result = greetings("Carol");
+        assert!(result.contains("Carol"));
+    }
+
+    #[test]
     fn larger_can_hold_smaller() {
         let larger = Rectangle {
             width: 44,
@@ -45,4 +51,8 @@ impl Rectangle {
 
 pub fn add_two(x: i32) -> i32 {
     x + 2
+}
+
+pub fn greetings(name: &str) -> String {
+    format!("Hello {}!", name)
 }
