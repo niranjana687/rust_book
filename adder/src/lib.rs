@@ -2,7 +2,7 @@
 mod tests {
     use super::*;
     #[test]
-    #[should_panic(expected = "reason")]
+    #[should_panic(expected = "Guess value should be in between 1 and 100")]
     fn greater_than_100() {
         Guess::new(200);
     }
@@ -72,9 +72,13 @@ struct Guess {
 
 impl Guess {
     pub fn new(value :i32) -> Guess {
-        if value < 1 || value > 100 {
-            panic!("The guessed value should be in between 1 and 100, got {}", value);
-        } Guess{ value }
+        if value < 1  {
+            panic!("The guessed value should be greater than 1, got {}", value);
+        } 
+        else if value >100 {
+            panic!("The guessed value should be less than 100, got {}", value);
+        }
+        Guess{ value }
 
     }
 }
