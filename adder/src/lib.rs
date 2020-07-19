@@ -11,7 +11,7 @@ mod tests {
             width: 33,
             height: 35,
         };
-        assert!(larger.can_hold(&smaller));
+        assert!(!smaller.can_hold(&larger));
     }
 
     #[test]
