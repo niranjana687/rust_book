@@ -11,7 +11,13 @@ mod tests {
             width: 33,
             height: 35,
         };
-        assert!(!smaller.can_hold(&larger));
+        assert!(larger.can_hold(&smaller));
+    }
+
+    #[test]
+    fn it_adds_two() {
+        assert_eq!(4, add_two(2));
+
     }
 
     #[test]
@@ -33,6 +39,10 @@ struct Rectangle {
 
 impl Rectangle {
     fn can_hold(&self, other :&Rectangle) -> bool {
-        self.width >= other.width && self.height >= other.height
+        self.width > other.width && self.height > other.height
     }
+}
+
+pub fn add_two(x: i32) -> i32 {
+    x + 2
 }
