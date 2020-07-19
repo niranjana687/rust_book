@@ -2,6 +2,12 @@
 mod tests {
     use super::*;
     #[test]
+    #[should_panic(expected = "reason")]
+    fn greater_than_100() {
+        Guess::new(200);
+    }
+
+    #[test]
     fn greetings_contain_name() {
         let result = greetings("Carol");
         assert!(result.contains("Carol"),
@@ -58,4 +64,17 @@ pub fn add_two(x: i32) -> i32 {
 
 pub fn greetings(name: &str) -> String {
     format!("Hello {}!", name)
+}
+
+struct Guess {
+    value : i32,
+}
+
+impl Guess {
+    pub fn new(value :i32) -> Guess {
+        if value < 1 || value > 100 {
+            panic!("The guessed value should be in between 1 and 100, got {}", value);
+        } Guess{ value }
+
+    }
 }
