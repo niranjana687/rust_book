@@ -15,6 +15,15 @@ mod tests {
         result    
     );
     }
+    #[test]
+    fn if_it_works() -> Result<(), String> {
+        if 2 + 2 == 4 {
+            Ok(())
+        }
+        else {
+            Err(String::from("Not equal to 4 "))
+        }
+    }
 
     #[test]
     fn larger_can_hold_smaller() {
