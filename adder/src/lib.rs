@@ -2,6 +2,7 @@
 mod tests {
     use super::*;
     #[test]
+    #[ignore]
     #[should_panic(expected = "Guess value should be in between 1 and 100")]
     fn greater_than_100() {
         Guess::new(200);
@@ -13,6 +14,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore]
     fn this_test_will_fail() {
         let value = prints_and_returns_10(5);
         assert_eq!(3, value);
@@ -24,6 +26,20 @@ mod tests {
         "Greeting did not contain name, it was {}",
         result    
     );
+    }
+    #[test]
+    fn add_two_and_two() {
+        assert_eq!(4, add_two(2));
+    }
+
+    #[test]
+    fn add_three_and_two() {
+        assert_eq!(5, add_two(3));
+    }
+
+    #[test]
+    fn one_hundred() {
+        assert_eq!(102, add_two(100));
     }
     #[test]
     fn if_it_works() -> Result<(), String> {
