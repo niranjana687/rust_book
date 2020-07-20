@@ -12,6 +12,10 @@ mod tests {
         let value = prints_and_returns_10(4);
         assert_eq!(10, value);
     }
+    #[test]
+    fn internal() {
+        assert_eq!(4, internal_add(2, 2));
+    }
 
     #[test]
     #[ignore]
@@ -121,4 +125,12 @@ impl Guess {
 fn prints_and_returns_10(a: i32) -> i32 {
     println!("The value given is: {}", a);
     10
+}
+
+pub fn adder_two(a: i32) -> i32 {
+    internal_add(a, 2)
+}
+
+fn internal_add(a: i32, b: i32) -> i32 {
+    a + b
 }
