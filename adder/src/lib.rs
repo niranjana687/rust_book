@@ -6,7 +6,17 @@ mod tests {
     fn greater_than_100() {
         Guess::new(200);
     }
+    #[test]
+    fn this_test_will_pass() {
+        let value = prints_and_returns_10(4);
+        assert_eq!(10, value);
+    }
 
+    #[test]
+    fn this_test_will_fail() {
+        let value = prints_and_returns_10(5);
+        assert_eq!(3, value);
+    }
     #[test]
     fn greetings_contain_name() {
         let result = greetings("Carol");
@@ -90,4 +100,9 @@ impl Guess {
         Guess{ value }
 
     }
+}
+
+fn prints_and_returns_10(a: i32) -> i32 {
+    println!("The value given is: {}", a);
+    10
 }
