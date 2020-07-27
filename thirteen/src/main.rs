@@ -37,6 +37,20 @@ fn main() {
     let intensity  = 8;
     let random_number = 5;
    generate_workout(intensity, random_number);
+   fn add_v1(a : i32) -> i32 {
+       a + 1 
+   }
+   //closure type inference and annotation
+   let add_v2 = |a| {a + 1 };
+   let add_v3 = |a: i32| -> i32 { a + 1 };
+   let add_v4 =|a| a + 1;
+   let v1 = add_v1(1);
+   let v2 = add_v2(1);
+   let v3 = add_v3(1);
+   let v4 = add_v4(1);
+   println!("{} {} {} {} ", v1, v2, v3 , v4);
 }
+
+
 
  
