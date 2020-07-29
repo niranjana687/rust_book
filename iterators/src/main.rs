@@ -1,5 +1,6 @@
+// use std::iter::Iterator;
 #[derive(PartialEq, Debug)]
- use std::iter::Iterator;
+ 
 struct Shoe {
     size: u8,
     style: String,
@@ -88,6 +89,20 @@ fn main() {
     let c = Counter::new();
 
     println!("{}", c.count);
+
+    // let buffer: &mut [i32];
+    // let mut coefficients: [i64; 12];
+    // let qlp_shift: i16;
+    
+    // for i in 12..buffer.len() {
+    //     let prediction = coefficients.iter()
+    //                                  .zip(&buffer[i - 12..i])
+    //                                  .map(|(&c, &s)| c * s as i64)
+    //                                  .sum::<i64>() >> qlp_shift;
+    //     let delta = buffer[i];
+    //     buffer[i] = prediction as i32 + delta;
+    // }
+    
 
     
 }
