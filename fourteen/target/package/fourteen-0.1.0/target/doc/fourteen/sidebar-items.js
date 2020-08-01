@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["factorial","Returns the factorial of a given number # Example `let f = 5;  let answer = fourteen::factorial(f);  assert_eq!(120, answer);`"]]});
