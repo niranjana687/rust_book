@@ -1,5 +1,6 @@
 use crate::List::{Cons, Nil};
 use std::ops::Deref;
+use std::mem::drop;
 
 struct MyBox<T>(T);
 
@@ -14,6 +15,17 @@ impl<T> Deref for MyBox<T> {
         &self.0
     }
 }
+
+struct CustomSmartPointer {
+    data:  String,
+}
+
+impl Drop for CustomSmartPointer {
+    fn drop(&mut self) {
+        println!("Value being dropped is '{}'", self.data);
+    }
+}
+
 #[derive(Debug)]
 enum List {
     Cons(i32, Box<List>),
@@ -34,6 +46,14 @@ fn main() {
 
     let name = MyBox::new(String::from("Niranjana"));
     hello(&name);
+
+    let d = CustomSmartPointer {
+        data: String::from("Negativity"),
+    };
+    println!("Smart Pointer is created");
+    drop(d);
+
+    println!("d dropped before the end of main")
 }
 
 fn hello(name: &str)  {
