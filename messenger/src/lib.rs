@@ -6,7 +6,7 @@
 //     }
 // }
 #![allow(unused_variables)]
-fn main() {
+
     pub trait Messenger {
         fn send(&self, msg:&str);
     }
@@ -46,7 +46,7 @@ fn main() {
     }
 
     
-}
+
 
 #[cfg(test)]
 mod test {
