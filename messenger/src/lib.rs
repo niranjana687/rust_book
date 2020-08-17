@@ -12,7 +12,7 @@ fn main() {
     }
 
     pub struct LimitTracker<'a, T:Messenger> {
-        messenger: &a' T,
+        messenger: &'a T,
         value: usize,
         max: usize,
     }
