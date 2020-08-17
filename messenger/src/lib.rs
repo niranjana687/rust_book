@@ -48,3 +48,36 @@ fn main() {
     
 }
 
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    struct MockMessenger {
+        sent_message: Vec<String>,
+        
+    }
+    
+    impl MockMessenger {
+        fn new() -> MockMessenger{
+            MockMessenger{
+                sent_message: vec![],
+            }
+        }
+    }
+    
+    impl Messenger for MockMessenger {
+        fn send(&self, message: &str) {
+            self.sent_message.push(String::from(message));
+        }
+    }
+    #[test]
+    fn send_over_75() {
+        let mock_mess = MockMessenger::new();
+        let mut limit_tracker = LimitTracker::new(&mock_mess, 100);
+
+        limit_tracker.set_value(80);
+
+        assert_eq!(mock_mess.sent_message.len(),1);
+    }
+}
+
